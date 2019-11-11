@@ -5,18 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
 import { ViewAllReviewsComponent } from './view-all-reviews/view-all-reviews.component';
-
-@NgModule({
+import { SelectRecruiterComponent } from './select-recruiter/select-recruiter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+@NgModule({ 
   declarations: [
     AppComponent,
-    ViewAllReviewsComponent
+    ViewAllReviewsComponent,
+    SelectRecruiterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
