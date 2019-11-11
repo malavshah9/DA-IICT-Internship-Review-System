@@ -1,6 +1,57 @@
-<p>
-  view-all-reviews works!
-</p>
-<mat-card>
+<!-- <p>
+  <h1>view-all-reviews works!</h1>
+  <mat-card>
+      <mat-card-title-group>
   <mat-card-title>XYZ LTD.</mat-card-title>
-</mat-card>
+  <mat-card-subtitle>Second Name of Company</mat-card-subtitle>
+</mat-card-title-group>
+<mat-card-content>
+  We create a container for a side navigation bar and specify the part for our content. As you can see the element defines a place for a side navigation and the element defines a place for our content. We need to use the local reference #sidenav, and a little bit later, you will see why.
+  </mat-card-content>
+<mat-card-actions><button mat-raised-button>Read more...</button></mat-card-actions>
+</mat-card> -->
+
+<mat-card class="mat-card-border">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-subtitle>Anonymous</mat-card-subtitle>
+      <mat-card-title>XYZ LTD.</mat-card-title>
+      <mat-card-subtitle>Second Name of Company</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <button mat-icon-button [color]="color" *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i" (click)="onClick(i+1)">
+            <mat-icon>
+              {{showIcon(i)}}
+            </mat-icon>
+          </button>
+          <mat-card-title>Title of Review</mat-card-title>
+          <mat-card-subtitle>Date</mat-card-subtitle>
+          <mat-divider [inset]="true"></mat-divider>
+          <mat-card-subtitle>Pros</mat-card-subtitle>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+        We create a container for a side navigation bar and specify the part for our content. As you can see the element defines a place for a side navigation and the element defines a place for our content. We need to use the local reference #sidenav, and a little bit later, you will see why.
+      </p>
+      <mat-card-subtitle>Cons</mat-card-subtitle>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+        We create a container for a side navigation bar and specify the part for our content. As you can see the element defines a place for a side navigation and the element defines a place for our content. We need to use the local reference #sidenav, and a little bit later, you will see why.
+      </p>
+      <mat-card-subtitle>Description</mat-card-subtitle>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+        We create a container for a side navigation bar and specify the part for our content. As you can see the element defines a place for a side navigation and the element defines a place for our content. We need to use the local reference #sidenav, and a little bit later, you will see why.
+      </p>
+    </mat-card-content>
+    <mat-card-actions><button mat-raised-button>Read more</button></mat-card-actions>
+  </mat-card>
+
+    <!-- <p class="body-2">
+        Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>
+    </p> -->

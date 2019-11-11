@@ -1,0 +1,20 @@
+.container {
+  font-size: 16px;
+  line-height: 16px;
+  height: 32px;
+  overflow: hidden;
+}
+.show {
+  overflow: visible;
+  height: auto;
+}
+.example-header-image {
+  background-image: url('https://image.shutterstock.com/image-vector/man-avatar-profile-picture-vector-260nw-229692004.jpg');
+  background-size: cover;
+}
+.example-card {
+  max-width: 400px;
+}
+.mat-card-border{
+  border:2px;
+}
