@@ -17,12 +17,18 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { WriteFeedbackComponent } from './write-feedback/write-feedback.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewAllReviewsComponent,
     SideMenuComponent,
+    WriteFeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatListModule,
     LayoutModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
