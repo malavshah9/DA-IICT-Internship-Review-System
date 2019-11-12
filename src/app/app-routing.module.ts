@@ -7,12 +7,9 @@ import { ViewInternshipComponent } from './view-internship/view-internship.compo
 
 const routes: Routes = [
   { path: 'reviews', component: ViewAllReviewsComponent },
-<<<<<<< HEAD
-  { path: 'add_internship', component: AddInternshipComponent}
-=======
+  { path: 'add_internship', component: AddInternshipComponent},
   { path: 'feedback', component: WriteFeedbackComponent },
   { path: 'internship', component: ViewInternshipComponent },
->>>>>>> 2c312a32ee6903a75c181eee2d9ec9915cf7555d
 ];
 
 @NgModule({
