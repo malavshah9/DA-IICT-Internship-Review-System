@@ -22,6 +22,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewInternshipComponent } from './view-internship/view-internship.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ViewAllReviewsComponent,
     SideMenuComponent,
     WriteFeedbackComponent,
+    ViewInternshipComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
