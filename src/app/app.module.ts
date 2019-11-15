@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ViewAllReviewsComponent } from './view-all-reviews/view-all-reviews.component';
+import { FormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule, } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from "@angular/material/list";
-
-
-import { ViewAllReviewsComponent } from './view-all-reviews/view-all-reviews.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddInternshipComponent } from './add-internship/add-internship.component';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { WriteFeedbackComponent } from './write-feedback/write-feedback.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -38,6 +39,7 @@ import { MatSnackBarModule } from '@angular/material';
     AppComponent,
     ViewAllReviewsComponent,
     SideMenuComponent,
+    AddInternshipComponent,
     WriteFeedbackComponent,
     ViewInternshipComponent,
     ViewInternshipDialog,
@@ -49,13 +51,20 @@ import { MatSnackBarModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDividerModule,
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     LayoutModule,
     MatButtonModule,
-    MatPaginatorModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatStepperModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
@@ -65,13 +74,15 @@ import { MatSnackBarModule } from '@angular/material';
     MatTooltipModule,
     MatDialogModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[
     ViewInternshipDialog,
-    WriteReviewComponent
+    WriteReviewComponent,
+    AddInternshipComponent
   ]
 })
 export class AppModule { }

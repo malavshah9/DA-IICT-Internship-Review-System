@@ -1,0 +1,92 @@
+<mat-horizontal-stepper linear #stepper style="margin:20px 0 0 0">
+  <mat-step [stepControl]="selectRecruiterFormGroup" errorMessage="Please Select Recuiter">
+    <form [formGroup]="selectRecruiterFormGroup">
+      <ng-template matStepLabel>Select Recruiter</ng-template>
+
+      <div style="text-align:center;margin:40px 0 0 0">
+        <mat-radio-group formControlName="recruiters">
+          <mat-radio-button value="company">Company </mat-radio-button>
+          &nbsp;<mat-radio-button value="faculty"> Faculty</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div style="text-align:center;margin:30px 0 0 0">
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="selectCompanyFormGroup" errorMessage="Please Select Company">
+    <form [formGroup]="selectCompanyFormGroup">
+      <ng-template matStepLabel>Select Company</ng-template>
+      <div style="text-align:center;margin:30px 0 0 0">
+        <mat-form-field>
+          <mat-label>Company</mat-label>
+          <mat-select formControlName="companyName">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let company of companies" [value]="company">{{company}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div style="text-align:center;margin:30px 0 0 0">
+        <button mat-raised-button matStepperPrevious>Back</button>&nbsp; &nbsp; &nbsp;
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="selectJobLocationFormGroup" errorMessage="Address is required.">
+    <form [formGroup]="selectJobLocationFormGroup">
+      <ng-template matStepLabel>Select Job Profile & Location</ng-template>
+
+      <div style="text-align:center">
+        <div class="leftlabel1">
+          <p>Location: </p>
+        </div>
+        <div class="rightfield1">
+          <mat-form-field>
+            <mat-label>Select Location</mat-label>
+            <mat-select formControlName="selectedLocation">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="leftlabel2">
+          <p>Job Profile: </p>
+        </div>
+        <div class="rightfield2">
+          <mat-form-field>
+            <mat-label>Select Job Profile</mat-label>
+            <mat-select formControlName="selectedProfile">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let profile of profiles" [value]="profile">{{profile}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="leftlabel3">
+          <p>Internship Type : </p>
+        </div>
+        <div class="rightfield3">
+          <mat-form-field>
+            <mat-label>Select Internship Type</mat-label>
+            <mat-select formControlName="selectedInternshipType">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div style="text-align:center;margin:120px 0 0 0">
+        <button mat-raised-button matStepperPrevious>Back</button>&nbsp; &nbsp; &nbsp;
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

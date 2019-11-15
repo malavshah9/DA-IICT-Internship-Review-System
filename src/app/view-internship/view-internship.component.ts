@@ -5,6 +5,7 @@ import { MatTable } from '@angular/material/table';
 import { ViewInternshipDataSource, ViewInternshipItem } from './view-internship-datasource';
 import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { WriteReviewComponent } from '../write-review/write-review.component';
+import { AddInternshipComponent } from '../add-internship/add-internship.component';
 
 @Component({
   selector: 'app-view-internship',
@@ -46,6 +47,18 @@ export class ViewInternshipComponent implements AfterViewInit, OnInit {
     const dialogRef = this.dialog.open(WriteReviewComponent, {
       width: '700px',
       height: '600px',
+      data: {name: "this.name", animal: "this.animal"}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed, result is ',result);
+      // this.animal = result;
+    });
+  }
+  AddInternship():void{
+    const dialogRef = this.dialog.open(AddInternshipComponent, {
+      // width: '700px',
+      // height: '600px',
       data: {name: "this.name", animal: "this.animal"}
     });
 

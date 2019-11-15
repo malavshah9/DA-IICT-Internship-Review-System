@@ -1,43 +1,41 @@
 <h2>View Internship Details</h2>
 <div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="Date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-      <!-- <td mat-cell>12-11-19</td> -->
-      <td mat-cell *matCellDef="let row">{{row.AddedDate}}</td>
-    </ng-container>
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+        <!-- Id Column -->
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <!-- <td mat-cell>12-11-19</td> -->
+            <td mat-cell *matCellDef="let row">{{row.AddedDate}}</td>
+        </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="Status">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-      <!-- <td mat-cell>Approved</td> -->
-      <td mat-cell *matCellDef="let row">{{row.Status}}</td>
-    </ng-container>
-    <ng-container matColumnDef="Start Date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
-      <!-- <td mat-cell>13-05-19</td> -->
-      <td mat-cell *matCellDef="let row">{{row.StartDate}}</td>
-    </ng-container> <ng-container matColumnDef="Job Profile">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Job Profile</th>
-      <!-- <td mat-cell>SDE</td> -->
-      <td mat-cell *matCellDef="let row">{{row.JobProfile}}</td>
-    </ng-container> <ng-container matColumnDef="Action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
-      <!-- <td mat-cell><i class="material-icons">remove_red_eye</i></td> -->
-      <td mat-cell *matCellDef="let row">
-        <button  mat-button color="accent" (click)="ViewDetails()" matTooltip="View Details"><i class="material-icons">remove_red_eye</i></button>
-        <button  mat-button color="accent" (click)="WriteReview()" matTooltip="Write Review"><i class="material-icons">rate_review</i></button>
-      </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <button mat-fab color="accent" id="add-button" matTooltip="Add Internship"><i class="material-icons" >add</i></button>
-  <mat-paginator #paginator
-      [length]="dataSource?.data.length"
-      [pageIndex]="0"
-      [pageSize]="50"
-      [pageSizeOptions]="[25, 50, 100, 250]">
-  </mat-paginator>
+        <!-- Name Column -->
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <!-- <td mat-cell>Approved</td> -->
+            <td mat-cell *matCellDef="let row">{{row.Status}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Start Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+            <!-- <td mat-cell>13-05-19</td> -->
+            <td mat-cell *matCellDef="let row">{{row.StartDate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Job Profile">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Job Profile</th>
+            <!-- <td mat-cell>SDE</td> -->
+            <td mat-cell *matCellDef="let row">{{row.JobProfile}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+            <!-- <td mat-cell><i class="material-icons">remove_red_eye</i></td> -->
+            <td mat-cell *matCellDef="let row">
+                <button mat-button color="accent" (click)="ViewDetails()" matTooltip="View Details"><i class="material-icons">remove_red_eye</i></button>
+                <button mat-button color="accent" (click)="WriteReview()" matTooltip="Write Review"><i class="material-icons">rate_review</i></button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <button mat-fab color="accent" id="add-button" (click)="AddInternship()" matTooltip="Add Internship"><i class="material-icons" >add</i></button>
+    <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[25, 50, 100, 250]">
+    </mat-paginator>
 </div>
