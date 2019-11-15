@@ -1,0 +1,113 @@
+<form [formGroup]="reviewForm" novalidate (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Write Review</h1>
+    <div mat-dialog-content>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input #title matInput placeholder="Title" formControlName="title">
+                    <mat-hint align="end">{{title.value.length}} / 10</mat-hint>
+                    <mat-error *ngIf="reviewForm.controls['title'].hasError('required')">
+                        Review Title is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-star-rating [rating]="current_rating" [starCount]="5" [color]="startColor" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <textarea #pros matInput placeholder="Pros" formControlName="pros"></textarea>
+                    <mat-hint align="end">{{pros.value.length}} / 50</mat-hint>
+                    <mat-error *ngIf="reviewForm.controls['pros'].hasError('required')">
+                        Pros is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <textarea #cons matInput placeholder="Cons" formControlName="cons"></textarea>
+                    <mat-hint align="end">{{cons.value.length}} / 50</mat-hint>
+                    <mat-error *ngIf="reviewForm.controls['cons'].hasError('required')">
+                        Cons is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <textarea #description matInput placeholder="Description" formControlName="description"></textarea>
+                    <mat-hint align="end">{{description.value.length}} / 10</mat-hint>
+                    <mat-error *ngIf="reviewForm.controls['cons'].hasError('required')">
+                        Cons is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-action class="row">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button class="row-space" color="primary" type="reset" (click)="onClose()">Cancel</button>
+    </div>
+    <!-- <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Write Review</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input #title matInput placeholder="Title" formControlName="title">
+            <mat-hint align="end">{{title.value.length}} / 10</mat-hint>
+            <mat-error *ngIf="reviewForm.controls['title'].hasError('required')">
+                Review Title is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea #pros matInput placeholder="Pros" formControlName="pros"></textarea>
+            <mat-hint align="end">{{pros.value.length}} / 50</mat-hint>
+            <mat-error *ngIf="reviewForm.controls['pros'].hasError('required')">
+              Pros is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea #cons matInput placeholder="Cons" formControlName="cons"></textarea>
+            <mat-hint align="end">{{cons.value.length}} / 50</mat-hint>
+            <mat-error *ngIf="reviewForm.controls['cons'].hasError('required')">
+              Cons is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea #description matInput placeholder="Description" formControlName="description"></textarea>
+            <mat-hint align="end">{{description.value.length}} / 10</mat-hint>
+            <mat-error *ngIf="reviewForm.controls['cons'].hasError('required')">
+              Cons is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card> -->
+</form>

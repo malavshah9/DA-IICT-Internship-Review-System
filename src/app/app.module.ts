@@ -26,6 +26,12 @@ import { ViewInternshipComponent } from './view-internship/view-internship.compo
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ViewInternshipDialog } from './view-internship/view-internship.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { WriteReviewComponent } from './write-review/write-review.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     SideMenuComponent,
     WriteFeedbackComponent,
     ViewInternshipComponent,
+    ViewInternshipDialog,
+    WriteReviewComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +62,16 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatTableModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    ViewInternshipDialog,
+    WriteReviewComponent
+  ]
 })
 export class AppModule { }
