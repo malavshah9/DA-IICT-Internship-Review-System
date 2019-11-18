@@ -1,8 +1,10 @@
+import { AddInternshipComponent } from './../add-internship/add-internship.component';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ViewInternshipDataSource, ViewInternshipItem } from './view-internship-datasource';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-internship',
@@ -18,6 +20,8 @@ export class ViewInternshipComponent implements AfterViewInit, OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['Date', 'Status','Start Date','Job Profile','Action'];
 
+  constructor(public dialog: MatDialog){}
+
   ngOnInit() {
     this.dataSource = new ViewInternshipDataSource();
   }
@@ -26,5 +30,14 @@ export class ViewInternshipComponent implements AfterViewInit, OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+  openDialog(){
+    const dialogRef = this.dialog.open(AddInternshipComponent, {
+      width: '650px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

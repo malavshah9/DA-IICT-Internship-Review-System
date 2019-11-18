@@ -27,6 +27,7 @@ import { ViewInternshipComponent } from './view-internship/view-internship.compo
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatTableModule,
     MatSortModule,
     MatTooltipModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
