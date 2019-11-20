@@ -1,6 +1,6 @@
 <mat-horizontal-stepper linear #stepper style="margin:20px 0 0 0">
   <mat-step [stepControl]="selectRecruiterFormGroup" errorMessage="Please Select Recuiter">
-    <form [formGroup]="selectRecruiterFormGroup">
+    <form [formGroup]="selectRecruiterFormGroup" (ngSubmit)="recruiterSubmit()">
       <ng-template matStepLabel>Select Recruiter</ng-template>
 
       <div style="text-align:center;margin:40px 0 0 0">
@@ -14,7 +14,7 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="selectCompanyFormGroup" errorMessage="Please Select Company">
+  <mat-step *ngIf="isCompany" [stepControl]="selectCompanyFormGroup" errorMessage="Please Select Company">
     <form [formGroup]="selectCompanyFormGroup">
       <ng-template matStepLabel>Select Company</ng-template>
       <div style="text-align:center;margin:30px 0 0 0">
@@ -32,6 +32,29 @@
       </div>
     </form>
   </mat-step>
+
+
+  <mat-step *ngIf="!isCompany" [stepControl]="selectFacultyFormGroup" errorMessage="Please Select Company">
+    <form [formGroup]="selectFacultyFormGroup">
+      <ng-template matStepLabel>Select Faculty</ng-template>
+      <div style="text-align:center;margin:30px 0 0 0">
+        <mat-form-field>
+          <mat-label>Faculty</mat-label>
+          <mat-select formControlName="facultyName">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let company of companies" [value]="company">{{company}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div style="text-align:center;margin:30px 0 0 0">
+        <button mat-raised-button matStepperPrevious>Back</button>&nbsp; &nbsp; &nbsp;
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
   <mat-step [stepControl]="selectJobLocationFormGroup" errorMessage="Address is required.">
     <form [formGroup]="selectJobLocationFormGroup">
       <ng-template matStepLabel>Select Job Profile & Location</ng-template>
@@ -76,7 +99,7 @@
       </div>
       <div style="text-align:center;margin:120px 0 0 0">
         <button mat-raised-button matStepperPrevious>Back</button>&nbsp; &nbsp; &nbsp;
-        <button mat-raised-button matStepperNext color="primary">Next</button>
+        <button type="submit" mat-raised-button matStepperNext color="primary">Next</button>
       </div>
     </form>
   </mat-step>
